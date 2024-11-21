@@ -27,6 +27,10 @@ defmodule ThingsBoardIOT.Auth do
     Poison.decode!(rep.body)
   end
 
+  def get_auth_url do
+    "#{ThingsBoardIOT.GlobalVariables.endPoint()}/auth/login"
+  end
+
   def requestToken_status_code(username, password) do
     url = "#{ThingsBoardIOT.GlobalVariables.endPoint()}/auth/login"
 
