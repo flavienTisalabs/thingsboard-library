@@ -29,7 +29,7 @@ defmodule ThingsBoardIOT.User do
 
   def get_user_by_email(username, password, email) do
     email = URI.encode_www_form(email)
-    url = "#{ThingsBoardIOT.GlobalVariables.endPoint()}/user/search/email/#{email}"
+    url = "#{ThingsBoardIOT.GlobalVariables.endPoint()}/users"
     token = ThingsBoardIOT.Auth.requestToken(username, password)["token"]
     headerAuth = ThingsBoardIOT.GlobalVariables.headersAuth(token)
     json_body = Poison.encode!(%{})
